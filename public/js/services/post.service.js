@@ -3,10 +3,11 @@
   angular.module('two-cents')
          .factory('PostService', PostService);
 
-  PostService.$inject = [];
+  PostService.$inject = ['$http'];
 
-  function PostService(){
+  function PostService($http){
     var posts = [];
+    var baseURL = '/posts/';
 
     init();
 
@@ -19,10 +20,18 @@
     };
 
     function init(){
-      
+      $http.get(baseURL)
+           .then(function(res){
+             posts = res.data.posts;
+           })
+           .catch(function(err){
+             console.log(err);
+           });
     }
 
-    function getAll(){}
+    function getAll(){
+      return posts;
+    }
 
     function getOne(id){}
 

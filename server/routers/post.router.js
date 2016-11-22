@@ -11,7 +11,7 @@ router.get('/posts', function(req, res){
       });
     }
     return res.status(200).json({
-      msg: posts
+      posts: posts
     });
   });
 });
@@ -24,7 +24,7 @@ router.get('/posts/:id', function(req, res){
       });
     }
     return res.status(200).json({
-      msg: post
+      post: post
     });
   });
 });
