@@ -6,7 +6,7 @@
   MainController.$inject = ['$scope'];
 
   function MainController($scope){
-    
+    $scope.testing = 'This is a test...';
   }
 
 }());
