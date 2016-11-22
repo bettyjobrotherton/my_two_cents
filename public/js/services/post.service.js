@@ -35,7 +35,15 @@
 
     function getOne(id){}
 
-    function create(newPost){}
+    function create(newPost){
+      $http.post(baseURL, newPost)
+           .then(function(res){
+             init();
+           })
+           .catch(function(err){
+             console.log(err);
+           });
+    }
 
     function update(id, newPostData){}
 
