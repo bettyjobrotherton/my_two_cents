@@ -12,8 +12,10 @@ server.use(bodyParser.urlencoded({extended: true}));
 
 mongoose.connect(mongoURI); //establishes the connection to the mongo database
 
+server.use(express.static(__dirname + '/public'));
+
 server.get('/', function(req, res){
-  res.send('I am working');
+  res.sendFile('public/html/index.html', {root: __dirname});
 });
 
 server.use(postRouter);
