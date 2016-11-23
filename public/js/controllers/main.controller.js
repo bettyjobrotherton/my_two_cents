@@ -11,6 +11,7 @@
     $scope.delete = deleteOne;
     $scope.getOne = getOne;
     $scope.updatePost = updatePost;
+    $scope.getSelectedPost = getSelectedPost;
 
     $scope.$watch(function(){
       return PostService.getAll();
@@ -31,6 +32,10 @@
     function getOne(id){
       PostService.getOne(id);
       $scope.postID = '';
+    }
+
+    function getSelectedPost(){
+      $scope.selectedPost = PostService.getSelectedPost();
     }
 
     function updatePost(id, updatedPost){
