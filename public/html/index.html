@@ -16,9 +16,23 @@
   <textarea cols='30' rows='10' ng-model='newPost.body'></textarea><br>
   <button class='btn btn-default' ng-click='create(newPost)'>Create</button>
   <hr>
+  Delete:
   <input type="text" ng-model='deletedID'>
   <button class="btn btn-danger" ng-click="delete(deletedID)">Delete</button>
   <hr>
+  Get One:
+  <input type="text" ng-model='postID'>
+  <button class="btn btn-success" ng-click="getOne(postID)">Fetch!</button>
+  <hr>
+  Upate:
+  <input type="text" ng-model='updateID'><br>
+  Author:
+  <input type="text" ng-model='updatedPost.author'><br>
+  Title:
+  <input type="text" ng-model='updatedPost.title'><br>
+  Body:
+  <textarea cols='30' rows='10' ng-model='updatedPost.body'></textarea>
+  <button class="btn btn-default" ng-click="updatePost(updateID, updatedPost)">Update</button>
   <pre>
     {{ posts | json }}
   </pre>

@@ -33,7 +33,15 @@
       return posts;
     }
 
-    function getOne(id){}
+    function getOne(id){
+      // $http.get(baseURL + id)
+      //      .then(function(res){
+      //
+      //      })
+      //      .catch(function(err){
+      //        console.log(err);
+      //      });
+    }
 
     function create(newPost){
       $http.post(baseURL, newPost)
@@ -45,7 +53,17 @@
            });
     }
 
-    function update(id, newPostData){}
+    function update(id, newPostData){
+      newPostData.summary = newPostData.body.slice(0, 100) + '...';
+
+      $http.put(baseURL + id, newPostData)
+           .then(function(res){
+             init();
+           })
+           .catch(function(err){
+             console.log(err);
+           });
+    }
 
     function deleteOne(id){
       $http.delete(baseURL + id)
