@@ -46,6 +46,8 @@ router.post('/posts', function(req, res){
 });
 
 router.put('/posts/:id', function(req, res){
+  req.body.summary = req.body.body.slice(0, 100) + '...';
+
   Post.findOneAndUpdate({_id: req.params.id}, req.body, function(err, oldPost){
     if(err){
       return res.status(500).json({
