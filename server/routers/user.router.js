@@ -10,10 +10,15 @@ router.get('/users/profile/:userID', function(req, res){
         msg: err
       });
     }
+    return res.status(200).json({
+      user: user
+    });
   });
 });
 
-router.post('/users/signup', function(req, res){});
+router.post('/users/signup', function(req, res){
+  
+});
 
 router.post('/users/login', function(req,res){});
 

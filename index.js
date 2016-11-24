@@ -3,6 +3,7 @@ var server = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var postRouter = require('./server/routers/post.router.js');
+var userRouter = require('./server/routers/user.router.js');
 
 var port = process.env.PORT || 8080;
 var mongoURI = process.env.MONGOURI || require('./config.js').mongoURI;
@@ -18,6 +19,7 @@ server.get('/', function(req, res){
   res.sendFile('public/html/index.html', {root: __dirname});
 });
 
+server.use(userRouter);
 server.use(postRouter);
 
 server.listen(port, function(){
