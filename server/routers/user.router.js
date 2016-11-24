@@ -17,7 +17,18 @@ router.get('/users/profile/:userID', function(req, res){
 });
 
 router.post('/users/signup', function(req, res){
-  
+  var user = new User(req.body);
+
+  user.save(function(err){
+    if(err){
+      return res.status(500).json({
+        msg: err
+      });
+    }
+    return res.status(201).json({
+      msg: 'Account successfully created'
+    });
+  });
 });
 
 router.post('/users/login', function(req,res){});
