@@ -14,7 +14,7 @@
       signup: signup,
       login: login,
       logout: logout
-    }
+    };
 
     function currentUser(){}
     function saveToken(token){}
