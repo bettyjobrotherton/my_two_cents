@@ -2,16 +2,16 @@
   angular.module('two-cents')
     .controller('SignUpController', SignUpController);
 
-  SignUpController.$inject = ['$scope', 'AuthService'];
+  SignUpController.$inject = ['$scope', 'AuthService', '$location'];
 
-  function SignUpController($scope, AuthService){
+  function SignUpController($scope, AuthService, $location){
     $scope.signup = signup;
     $scope.required = true;
 
     function signup(newUser){
       AuthService.signup(newUser)
                  .then(function(){
-                   alert('Yayyy!!! Signing up!');
+                   $location.path('/login');
                  })
                  .catch(function(){
                    $scope.newUser = {};
