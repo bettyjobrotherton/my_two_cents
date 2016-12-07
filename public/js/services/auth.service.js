@@ -31,8 +31,9 @@
           return {
             email: payload.email
           };
-      } else {
-        return null;
+        } else {
+          return null;
+        }
       }
     }
 
@@ -75,6 +76,7 @@
       localStorage.removeItem('two-cents-token');
     }
 
-  }
+    }
 
+  
 }());
