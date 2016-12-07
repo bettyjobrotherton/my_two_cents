@@ -23,17 +23,15 @@
         var token = getToken();
         var payload;
 
-        if(token){
-          payload = token.split('.')[1];
-          payload = $window.atob(payload);
-          payload = JSON.parse(payload);
+        payload = token.split('.')[1];
+        payload = $window.atob(payload);
+        payload = JSON.parse(payload);
 
-          return {
-            email: payload.email
-          };
-        } else {
-          return null;
-        }
+        return {
+          email: payload.email
+        };
+      } else {
+        return null;
       }
     }
 
@@ -67,7 +65,7 @@
     function login(user){
       return $http.post('/users/login', user)
                   .then(function(res){
-                    var token = res.token;
+                    var token = res.data.token;
                     saveToken(token);
                   });
     }
@@ -78,5 +76,5 @@
 
     }
 
-  
+
 }());
