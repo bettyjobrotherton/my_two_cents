@@ -6,6 +6,7 @@
 
   function SignUpController($scope, AuthService){
     $scope.signup = signup;
+    $scope.required = true;
 
     function signup(newUser){
       AuthService.signup(newUser)
