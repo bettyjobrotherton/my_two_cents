@@ -15,7 +15,7 @@
                  })
                  .catch(function(){
                    $scope.newUser = {};
-                   alert('Yo stuff be broke!');
+                   $location.path('/signup');
                  });
     }
   }
