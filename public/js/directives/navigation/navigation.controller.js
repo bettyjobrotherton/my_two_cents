@@ -6,7 +6,6 @@
 
   function NavigationController($scope, AuthService){
       $scope.isLoggedIn = AuthService.isLoggedIn;
-
-      
+  
   }
 }());

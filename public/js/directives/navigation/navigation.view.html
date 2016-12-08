@@ -4,23 +4,21 @@
       <a href="#/" class="navbar-brand">Home</a>
     </div>
     <div class="collapse navbar-collapse">
-     <ul class="nav navbar-nav">
-       <li ng-hide="isLoggedIn">
-         <a href="#/login">Login</a>
-       </li>
-       <li ng-hide="isLoggedIn">
-         <a href="#/signup">Signup</a>
-       </li>
-       <li ng-show="isLoggedIn">
-         <a href="#/create">Create</a>
-       </li>
-       <li ng-show="isLoggedIn">
-         <a href="#/profile">Profile</a>
-       </li>
-       <li ng-show="isLoggedIn">
-         <logout-button></logout-button>
-       </li>
+      <ul class="nav navbar-nav">
+        <li ng-hide='isLoggedIn()'>
+          <a href="#/login">Login</a>
+        </li>
+        <li ng-hide='isLoggedIn()'>
+          <a href="#/signup">Signup!</a>
+        </li>
+        <li ng-show='isLoggedIn()'>
+          <a href="#/create">Create</a>
+        </li>
+        <li ng-show='isLoggedIn()'>
+          <a href="#/profile/1">Profile</a>
+        </li>
       </ul>
+      <logout-button ng-show='isLoggedIn()'></logout-button>
     </div>
   </div>
 </nav>
