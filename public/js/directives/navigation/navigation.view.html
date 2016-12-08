@@ -5,15 +5,21 @@
     </div>
     <div class="collapse navbar-collapse">
      <ul class="nav navbar-nav">
-       <li class="active">
+       <li ng-hide="isLoggedIn">
          <a href="#/login">Login</a>
        </li>
-       <li>
+       <li ng-hide="isLoggedIn">
          <a href="#/signup">Signup</a>
        </li>
-       <li><a href="#/create">Create</a></li>
-       <li><a href="#/profile">Profile</a></li>
-       <li><logout-button></logout-button></li>
+       <li ng-show="isLoggedIn">
+         <a href="#/create">Create</a>
+       </li>
+       <li ng-show="isLoggedIn">
+         <a href="#/profile">Profile</a>
+       </li>
+       <li ng-show="isLoggedIn">
+         <logout-button></logout-button>
+       </li>
       </ul>
     </div>
   </div>
