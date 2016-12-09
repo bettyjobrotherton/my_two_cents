@@ -66,16 +66,12 @@ router.post('/users/login', function(req, res){
     });
   })(req, res);
 });
-<<<<<<< HEAD
 
-router.put('/users/profile/:userId', function(req, res){});
-=======
 /**
   This route would be needed to update features such as password, age,
   as well as profile pictures, bios, etc. However, those features are
   not implemented at current time.
 */
 // router.put('/users/profile/:userId', function(req, res){});
->>>>>>> 91e83b585d9364b00810eec7e4750a4f9974ca46
 
 module.exports = router;
