@@ -53,6 +53,6 @@
           access: {
             restricted: false
           }
-        })
+        });
     }
 }());

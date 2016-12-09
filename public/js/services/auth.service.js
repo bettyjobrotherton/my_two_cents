@@ -4,9 +4,9 @@
 
   AuthService.$inject = ['$http', '$window'];
 
+
   function AuthService($http, $window){
     var localStorage = $window.localStorage;
-
     return {
       currentUser: currentUser,
       saveToken: saveToken,
@@ -73,8 +73,5 @@
     function logout(){
       localStorage.removeItem('two-cents-token');
     }
-
-    }
-
-
+  }
 }());

@@ -6,7 +6,7 @@ var userRouter = require('./server/routers/user.router.js');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 
-require('./server/config/passport.js');
+require('./server/config/passport.js'); //this configures passport
 
 var port = process.env.PORT || 8080;
 var mongoURI = process.env.MONGOURI || require('./config.js').mongoURI;

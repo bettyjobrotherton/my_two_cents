@@ -10,13 +10,13 @@
 
     function signup(newUser){
       AuthService.signup(newUser)
-                 .then(function(){
-                   $location.path('/login');
-                 })
-                 .catch(function(){
-                   $scope.newUser = {};
-                   $location.path('/signup');
-                 });
+          .then(function(){
+            $location.path('/login');
+          })
+          .catch(function(){
+            $scope.newUser = {};
+            $location.path('/signup');
+          });
     }
   }
 }());
