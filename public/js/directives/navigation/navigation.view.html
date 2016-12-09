@@ -8,15 +8,9 @@
         <li ng-hide='isLoggedIn()'>
           <a href="#/login">Login</a>
         </li>
-        <li ng-hide='isLoggedIn()'>
-          <a href="#/signup">Signup!</a>
-        </li>
-        <li ng-show='isLoggedIn()'>
-          <a href="#/create">Create</a>
-        </li>
-        <li ng-show='isLoggedIn()'>
-          <a href="#/profile/1">Profile</a>
-        </li>
+        <li ng-hide='isLoggedIn()'><a href="#/signup">Signup!</a></li>
+        <li ng-show='isLoggedIn()'><a href="#/create">Create</a></li>
+        <li ng-show='isLoggedIn()'><a href="#/profile/{{ userId }}">Profile</a></li>
       </ul>
       <logout-button ng-show='isLoggedIn()'></logout-button>
     </div>

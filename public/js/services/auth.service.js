@@ -9,6 +9,7 @@
     var localStorage = $window.localStorage;
     return {
       currentUser: currentUser,
+      userId: userId,
       saveToken: saveToken,
       getToken: getToken,
       isLoggedIn: isLoggedIn,
@@ -17,6 +18,17 @@
       logout: logout
     };
 
+    function userId(){
+      if(isLoggedIn()){
+        var token = getToken();
+        var payload = token.split('.')[1];
+        payload = $window.atob(payload);
+        payload = JSON.parse(payload);
+        return payload._id;
+      } else {
+        return null;
+      }
+    }
     function currentUser(){
       //grabbing _id is very similar to this...
       if(isLoggedIn()){
